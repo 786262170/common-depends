@@ -1,0 +1,27 @@
+fail_fast: false
+exclude: ^tests/$
+repos:
+  - repo: local
+    hooks:
+      - id: yapf
+        name: yapf
+        stages: [ commit ]
+        language: system
+        entry: yapf
+        types: [ python ]
+        args: [--recursive -i]
+      - id: isort
+        name: isort
+        stages: [ commit ]
+        language: system
+        entry: isort -rc
+        types: [ python ]
+      - id: pylint
+        name: pylint
+        stages: [commit]
+        language: system
+        entry: pylint
+        files: \.py$
+        types: [python]
+        exclude: setup.py
+        args: [--rcfile=.pylintrc]

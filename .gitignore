@@ -1,0 +1,24 @@
+.mypy_cache
+.coverage
+htmlcov
+
+**/__pycache__
+.idea
+useless
+pyproject.toml
+*.log
+*.parquet
+*.lock
+*.vscode
+*.DS_Store
+
+
+# Ignore dynaconf secret files
+.secrets.*
+
+
+
+# coverage
+*.coverage
+
+
